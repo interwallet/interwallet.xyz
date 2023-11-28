@@ -8,5 +8,5 @@ InterWallet is a natively cross-chain cryptocurrency wallet.
 
 It is the *production grade* continuation of the proof of concept built during EthGlobal's EthOnline hackathon: [SCBridgeAccount](https://ethglobal.com/showcase/scbridgeaccount-ivyas), winner of top L2 sponsor prizes:
 
-- Best Public good with Account Abstraction (from Polygon)
+- Best Public Good with Account Abstraction (from Polygon)
 - Best Use of Scroll (from Scroll)
