@@ -2,9 +2,25 @@
 // Newsletter.tsx
 import { initializeApp } from 'firebase/app';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import React from 'react';
+import React, { useState } from 'react';
+
+interface ResultProps {
+  isSuccess: boolean;
+  message: string;
+}
+
+const Result: React.FC<ResultProps> = ({ isSuccess, message }) => {
+  if (isSuccess) {
+    return <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p>;
+  } else if (!isSuccess && message) {
+    return <div>{message}</div>;
+  }
+  return null;
+};
 
 export default function Newsletter() {
+  const [signup, setSignup] = useState<boolean>(false);
+  const [signupError, setSignupError] = useState<string>('');
 
   const firebaseConfig = {
     apiKey: "AIzaSyA8ibH6-pWhpOMYQA7mNl_ji0jwSg4ib-8",
@@ -34,8 +50,10 @@ export default function Newsletter() {
         email,
         time: new Date()
       });
+      setSignup(true);
       console.log("Document written with ID: ", docRef.id);
     } catch (error) {
+      setSignupError(error as string);
       console.error("Error adding document: ", error);
     }
   }
@@ -87,10 +105,11 @@ export default function Newsletter() {
                 <form className="w-full lg:w-auto">
                   <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
                     <input id="newsletterEmail" type="email" className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500" placeholder="Your email…" aria-label="Your email…" />
-                    <a className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" href="#0" onClick={addData}>Subscribe</a>
+                    <a className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" href="#0" onClick={addData}>{ signup ? '✔' : 'Subscribe'} </a>
                   </div>
                   {/* Success message */}
-                  {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
+                  {/*  */}
+                  <Result isSuccess={signup} message={signupError} />
                   <p className="text-sm text-gray-400 mt-3">Unsubscribe at any time.</p>
                 </form>
               </div>
