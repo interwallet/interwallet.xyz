@@ -8,19 +8,19 @@ export default function Logo() {
 
         <defs>
           <linearGradient id="fullGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{'stop-color':'#14b8a6', 'stop-opacity':1}} />
+            <stop offset="0%" style={{'stopColor':'#14b8a6', 'stopOpacity':1}} />
             <stop offset="100%" style={{
-              'stop-color': '#2563eb',
-              'stop-opacity':1
+              'stopColor': '#2563eb',
+              'stopOpacity':1
               }} />
           </linearGradient>
           <linearGradient id="lGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style  ={{'stop-color':'#2563eb', 'stop-opacity': 1}} />
-            <stop offset="100%" style={{'stop-color':'#1D8EC9', 'stop-opacity': 1}} />
+            <stop offset="0%" style  ={{'stopColor':'#2563eb', 'stopOpacity': 1}} />
+            <stop offset="100%" style={{'stopColor':'#1D8EC9', 'stopOpacity': 1}} />
           </linearGradient>
           <linearGradient id="rGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{'stop-color':'#1D8EC9', 'stop-opacity':1}} />
-            <stop offset="100%" style={{'stop-color':'#14b8a6', 'stop-opacity':1}} />
+            <stop offset="0%" style={{'stopColor':'#1D8EC9', 'stopOpacity':1}} />
+            <stop offset="100%" style={{'stopColor':'#14b8a6', 'stopOpacity':1}} />
           </linearGradient>
         </defs>
 
