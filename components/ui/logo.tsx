@@ -2,17 +2,33 @@ import Link from 'next/link'
 
 export default function Logo() {
   return (
-    <Link href="/" className="block" aria-label="Cruip">
-      <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <Link href="/" className="block" aria-label="InterWallet">
+      <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="none"/>
+
         <defs>
-          <radialGradient cx="21.152%" cy="86.063%" fx="21.152%" fy="86.063%" r="79.941%" id="footer-logo">
-            <stop stopColor="#4FD1C5" offset="0%" />
-            <stop stopColor="#81E6D9" offset="25.871%" />
-            <stop stopColor="#338CF5" offset="100%" />
-          </radialGradient>
+          <linearGradient id="fullGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{'stop-color':'#14b8a6', 'stop-opacity':1}} />
+            <stop offset="100%" style={{
+              'stop-color': '#2563eb',
+              'stop-opacity':1
+              }} />
+          </linearGradient>
+          <linearGradient id="lGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style  ={{'stop-color':'#2563eb', 'stop-opacity': 1}} />
+            <stop offset="100%" style={{'stop-color':'#1D8EC9', 'stop-opacity': 1}} />
+          </linearGradient>
+          <linearGradient id="rGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{'stop-color':'#1D8EC9', 'stop-opacity':1}} />
+            <stop offset="100%" style={{'stop-color':'#14b8a6', 'stop-opacity':1}} />
+          </linearGradient>
         </defs>
-        <rect width="32" height="32" rx="16" fill="url(#footer-logo)" fillRule="nonzero" />
+
+        <path d="M10,20 Q25,150 50,45" stroke="url(#lGradient)" stroke-width="15" fill="none" stroke-linecap="round"/>
+        <path d="M50,45 Q75,150 90,20" stroke="url(#rGradient)" stroke-width="15" fill="none" stroke-linecap="round"/>
+        <circle cx="50" cy="17.5" r="13" fill="#1D8EC9"/>
       </svg>
+
     </Link>
   )
 }
