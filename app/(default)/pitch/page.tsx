@@ -3,7 +3,7 @@ export const metadata = {
   description: 'A next-generation crypto wallet for the next-generation of crypto adoption.',
 }
 
-import Hero from '@/components/hero'
+import Hero from './hero'
 import Features from '@/components/features'
 import FeaturesBlocks from '@/components/features-blocks'
 import Testimonials from '@/components/testimonials'
