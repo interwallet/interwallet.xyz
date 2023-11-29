@@ -69,8 +69,8 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Friendly Interface</div>
-                    <div className="text-gray-600">With fast routing and, we can remove <b>Network</b> configuration from the UI altogether. Make web3's application chains as invisible to end-users as web2's cloud compute platforms.</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Friendlier Interface</div>
+                    <div className="text-gray-600">With fast and seamless routing, we can remove <b>Network</b> configuration from the UI altogether. Let's make web3's application and settlement layers as invisible to end-users as web2's cloud compute platforms.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
