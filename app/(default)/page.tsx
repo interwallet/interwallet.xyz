@@ -17,7 +17,7 @@ import { getAnalytics } from 'firebase/analytics';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-export const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyA8ibH6-pWhpOMYQA7mNl_ji0jwSg4ib-8",
   authDomain: "interwallet-xyz.firebaseapp.com",
   projectId: "interwallet-xyz",
@@ -28,8 +28,8 @@ export const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const fbApp = initializeApp(firebaseConfig);
+const fbAnalytics = getAnalytics(fbApp);
 
 export default function Home() {
   return (
