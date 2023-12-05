@@ -132,6 +132,24 @@ export default function Irwin(p: IrwinProps) {
           </linearGradient>
         </defs>
 
+          <>
+            <path
+              d="M50,45 Q45,105 25,175"
+              stroke={`url(#rGradient-${guid})`}
+              stroke-width="15"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M50,45 Q55,105 75,175"
+              stroke={`url(#rGradient-${guid})`}
+              stroke-width="15"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </>
+        }
+        else {<></>}
         <path
           d="M10,20 Q25,150 50,45"
           stroke={`url(#lGradient-${guid})`}
