@@ -38,7 +38,7 @@ function interpolateColor(color1: string, color2: string) {
     throw new Error("Colors must be in the format #000000");
   }
 
-  console.log(color1, color2)
+  console.log(color1, color2);
 
   const rgb1 = {
     r: parseInt(color1.slice(1, 3), 16),
@@ -50,25 +50,25 @@ function interpolateColor(color1: string, color2: string) {
     g: parseInt(color2.slice(3, 5), 16),
     b: parseInt(color2.slice(5, 7), 16),
   };
-  console.log(JSON.stringify(rgb1), JSON.stringify(rgb2))
+  console.log(JSON.stringify(rgb1), JSON.stringify(rgb2));
   const avg = {
     r: (rgb1.r + rgb2.r) / 2,
     g: (rgb1.g + rgb2.g) / 2,
     b: (rgb1.b + rgb2.b) / 2,
   };
-  const hexR = Math.round(avg.r).toString(16).padStart(2, '0');
-  const hexG = Math.round(avg.g).toString(16).padStart(2, '0');
-  const hexB = Math.round(avg.b).toString(16).padStart(2, '0');
+  const hexR = Math.round(avg.r).toString(16).padStart(2, "0");
+  const hexG = Math.round(avg.g).toString(16).padStart(2, "0");
+  const hexB = Math.round(avg.b).toString(16).padStart(2, "0");
 
-
-  console.log(`#${hexR}${hexG}${hexB}`)
+  console.log(`#${hexR}${hexG}${hexB}`);
 
   return `#${hexR}${hexG}${hexB}`;
 }
 
 export default function Irwin(p: IrwinProps) {
   const intermediateColor = interpolateColor(p.left, p.right);
-  console.log(`Intermediate color: ${intermediateColor}`);
+  // console.log(`Intermediate color: ${intermediateColor}`);
+  console.log(`legs: ${p.legs}`);
 
   const guid =
     Math.random().toString(36).substring(2, 15) +
@@ -81,9 +81,8 @@ export default function Irwin(p: IrwinProps) {
         height={p.size}
         viewBox={"0 0 " + p.height.toString() + " " + p.height.toString()}
         xmlns="http://www.w3.org/2000/svg"
-      > 
+      >
         <rect width="100%" height="100%" fill="none" />
-
         <defs>
           <linearGradient
             id={`fullGradient-${guid}`}
@@ -131,7 +130,7 @@ export default function Irwin(p: IrwinProps) {
             />
           </linearGradient>
         </defs>
-
+        {p.legs &&         
           <>
             <path
               d="M50,45 Q45,105 25,175"
