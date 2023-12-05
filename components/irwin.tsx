@@ -130,7 +130,7 @@ export default function Irwin(p: IrwinProps) {
             />
           </linearGradient>
         </defs>
-        {p.legs &&         
+        {p.legs &&
           <>
             <path
               d="M50,45 Q45,105 25,175"
